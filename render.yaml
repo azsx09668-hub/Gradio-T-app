@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tainan-open-data-pwa
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: CACHE_SECONDS
+        value: "600"
